@@ -31,6 +31,7 @@ export default class ChangeCase implements vscode.CodeActionProvider {
 
 		//Set the Preferred Action
 		changeToConstantCase.isPreferred = true;
+		changeToVariableCase.isPreferred = true;
 
 		//Setup the Preferred Cases
 		const preferredCases: any = [];
@@ -48,7 +49,7 @@ export default class ChangeCase implements vscode.CodeActionProvider {
 		caseSettings.map((setting: string) => {
 			//
 			//Check if the Setting does not Exist
-			if (vscode.workspace.getConfiguration("case.setting")[setting]) return;
+			if (vscode.workspace.getConfiguration("nytely.case.change.settings")[setting]) return;
 
 			//Push the function for the Specific Setting to the Preferred Cases
 			preferredCases.push(settingToFunctionMapping[setting]);
@@ -95,7 +96,7 @@ export default class ChangeCase implements vscode.CodeActionProvider {
 		Cases.set("Constant Case", this.toConstantCase);
 
 		//Check if the Requested Case Does not Exist
-		if (Cases.has(selectedCase)) return "Errors";
+		if (!Cases.has(selectedCase)) return "Errors";
 
 		//Get the Requested Case
 		const Requested_Case = Cases.get(selectedCase);
@@ -129,7 +130,7 @@ export default class ChangeCase implements vscode.CodeActionProvider {
 		}
 
 		//Get the Selected Text to Edit
-		const selections: vscode.Selection[] = editor.selections;
+		const selections: Readonly<vscode.Selection[]> = editor.selections;
 
 		//Edit the Selected Text
 		editor.edit((textSelected) => {

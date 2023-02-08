@@ -2,7 +2,7 @@
 import * as vscode from "vscode";
 
 //Required Constants
-const COMMAND = "case-change";
+const COMMAND = "nytely-case-change";
 
 //Classes
 import ChangeCase from "./Classes/ChangeCase_Class";
