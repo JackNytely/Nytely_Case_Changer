@@ -12,17 +12,17 @@ This extension allows you to convert the selected text into different case. Supp
 \
 **1. Select any text from the file, You will see an left side icon for options**\
 \
-![Alt text](https://i.ibb.co/rZQYspH/img1.png)
+![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217572148-47306801-17ad-4de4-8eba-9e85ce436c7b.png)
 
 > **NOTE**: If you want to change all the occurance of the selected Text, use **Ctrl+Shift+L** or **Cmd+Shift+L**(on Mac) after selection
 
 **2. Click on the icon, it will give the options on change the case and select any option from the dropdown**\
  \
- ![Alt text](https://i.ibb.co/VvYHQ45/img2.png)
+![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217572620-81ad0d37-36fd-4aa2-8854-f1a508981567.png)
 
-**3. The selected text case will gets changed**\
+**3. The selected text case will get changed**\
  \
- ![Alt text](https://i.ibb.co/yV0JS8K/img3.png)
+ ![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217573671-eaaa55fa-906a-4ff1-8244-d05751197cb5.png)
 
 > Language Supported: javascript, typescript, javascriptreact, typescriptreact, html, css, less, scss, sass, python, json, markdown, go
 
@@ -32,13 +32,13 @@ You can add only a subset of all supported Case Change options as per your prefe
 
 You need to change the default json (**settings.json**) in your VS Code settings (**Ctrl + ,**).
 \
- ![Alt text](https://i.ibb.co/rdvNTfy/setting-Img.png)
+![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217574146-89ab9799-9234-4b5f-a90d-fbbf0606e939.png)
 
 ```json
 Following is the default JSON that support all casing, Change the value to false which you don't want to use.
 {
   "variableCase": true,
-	"constantCase": true
+  "constantCase": true
 }
 ```
 
@@ -46,6 +46,6 @@ Following is the default JSON that support all casing, Change the value to false
 
 ### 0.1.0
 
-Initial release of Change Case
+Initial release of Nytely Case Changer
 
 **Enjoy!**
