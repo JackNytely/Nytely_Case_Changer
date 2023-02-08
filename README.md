@@ -4,7 +4,7 @@ This extension allows you to convert the selected text into a Nytely Standardize
 
 ```css
 1. Variable Case - (variable_case)
-2. Constant Case- (Constant_Case)
+2. Constant Case - (Constant_Case)
 ```
 
 ## **How to Use it**
