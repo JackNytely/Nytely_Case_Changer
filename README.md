@@ -1,71 +1,51 @@
-# nytely-case-changer README
+# Change Case
 
-This is the README for your extension "nytely-case-changer". After writing up a brief description, we recommend including the following sections.
+This extension allows you to convert the selected text into different case. Supported Cases are:
 
-## Features
+```css
+1. Variable Case - (variable_case)
+2. Constant Case- (Constant_Case)
+```
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## **How to Use it**
 
-For example if there is an image subfolder under your extension project workspace:
+\
+**1. Select any text from the file, You will see an left side icon for options**\
+\
+![Alt text](https://i.ibb.co/rZQYspH/img1.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+> **NOTE**: If you want to change all the occurance of the selected Text, use **Ctrl+Shift+L** or **Cmd+Shift+L**(on Mac) after selection
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+**2. Click on the icon, it will give the options on change the case and select any option from the dropdown**\
+ \
+ ![Alt text](https://i.ibb.co/VvYHQ45/img2.png)
 
-## Requirements
+**3. The selected text case will gets changed**\
+ \
+ ![Alt text](https://i.ibb.co/yV0JS8K/img3.png)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+> Language Supported: javascript, typescript, javascriptreact, typescriptreact, html, css, less, scss, sass, python, json, markdown, go
 
-## Extension Settings
+## **Customizing the Case Change Options**
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+You can add only a subset of all supported Case Change options as per your preference and usage, to keep the Case Change list short and more handy.
 
-For example:
+You need to change the default json (**settings.json**) in your VS Code settings (**Ctrl + ,**).
+\
+ ![Alt text](https://i.ibb.co/rdvNTfy/setting-Img.png)
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```json
+Following is the default JSON that support all casing, Change the value to false which you don't want to use.
+{
+  "variableCase": true,
+	"constantCase": true
+}
+```
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.1.0
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Initial release of Change Case
 
 **Enjoy!**
