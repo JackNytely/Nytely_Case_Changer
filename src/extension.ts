@@ -1,25 +1,45 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/semi */
+//Required Modules
+import * as vscode from "vscode";
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+//Classes
+import ChangeCase from "./Classes/ChangeCase_Class";
+
+//Exports
 export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "nytely-case-changer" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('nytely-case-changer.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Nytely Case Changer!');
-	});
+	//context.subscriptions.push(disposable);
+	context.subscriptions.push(
+		//
+		//Setup the Available Languages for the Extension
+		vscode.languages.registerCodeActionsProvider(
+			[
+				{ scheme: "file", language: "javascript" },
+				{ scheme: "file", language: "typescript" },
+				{ scheme: "file", language: "html" },
+				{ scheme: "file", language: "css" },
+				{ scheme: "file", language: "less" },
+				{ scheme: "file", language: "typescriptreact" },
+				{ scheme: "file", language: "scss" },
+				{ scheme: "file", language: "python" },
+				{ scheme: "file", language: "markdown" },
+				{ scheme: "file", language: "json" },
+				{ scheme: "file", language: "javascriptreact" },
+				{ scheme: "file", language: "sass" },
+				{ scheme: "file", language: "go" },
+			],
 
-	context.subscriptions.push(disposable);
+			//Add the ChangeCase Subscription
+			new ChangeCase(),
+			{
+				//
+				//Provide the Code Actions
+				providedCodeActionKinds: ChangeCase.providedCodeActionKinds,
+			}
+		)
+	);
 }
 
 // This method is called when your extension is deactivated
