@@ -1,80 +1,45 @@
 {
-	"name": "nytely-case-changer",
-	"displayName": "Nytely Case Changer",
-	"publisher": "JackNytely",
-	"description": "Text will be changed to the Selected Case",
-	"version": "1.0.0",
-	"icon": "static/icon.png",
-	"author": {
-		"name": "JackNytely"
-	},
-	"markdown": "standard",
-	"keywords": [
-		"JackNytely",
-		"Case Changer",
-		"Nytely Case Changer"
-	],
-	"engines": {
-		"vscode": "^1.32.0"
-	},
-	"categories": [
-		"Formatters",
-		"Other"
-	],
-	"activationEvents": [
-		"onLanguage:javascript",
-		"onLanguage:typescript",
-		"onLanguage:html",
-		"onLanguage:css",
-		"onLanguage:less",
-		"onLanguage:typescriptreact",
-		"onLanguage:scss",
-		"onLanguage:python",
-		"onLanguage:markdown",
-		"onLanguage:json",
-		"onLanguage:javascriptreact",
-		"onLanguage:sass",
-		"onLanguage:go"
-	],
-	"main": "./out/extension.js",
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"lint": "eslint src --ext ts",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"test": "node ./out/test/runTest.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/JackNytely/Nytely-Case-Changer_VS-Extension.git"
-	},
-	"contributes": {
-		"configuration": {
-			"title": "Case Change",
-			"properties": {
-				"case.setting": {
-					"type": "object",
-					"default": {
-						"variableCase": true,
-						"constantCase": true
-					},
-					"description": "Specifies the case which you want to use."
-				}
-			}
-		}
-	},
-	"devDependencies": {
-		"@types/glob": "^8.0.1",
-		"@types/mocha": "^10.0.1",
-		"@types/node": "^18.13.0",
-		"@types/vscode": "^1.75.0",
-		"@typescript-eslint/eslint-plugin": "^5.51.0",
-		"@typescript-eslint/parser": "^5.51.0",
-		"@vscode/test-electron": "^2.2.3",
-		"eslint": "^8.33.0",
-		"glob": "^8.1.0",
-		"mocha": "^10.2.0",
-		"typescript": "^4.9.5"
-	}
+  "name": "nytely-case-changer",
+  "displayName": "Nytely Case Changer",
+  "description": "Changes the Case of the Selected Text to the Nytely Standard Constant_Case or variable_case",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:nytely-case-changer.helloWorld"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nytely-case-changer.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.2"
+  }
 }
