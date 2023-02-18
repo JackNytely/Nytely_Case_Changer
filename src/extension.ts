@@ -5,6 +5,10 @@ import * as vscode from "vscode";
 
 //Classes
 import ChangeCase from "./Classes/ChangeCase_Class";
+import AutoFormatter from "./Classes/AutoFormatter_Class";
+
+//Start the Auto Formatter
+new AutoFormatter();
 
 //Exports
 export function activate(context: vscode.ExtensionContext) {
