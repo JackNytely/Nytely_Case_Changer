@@ -70,8 +70,20 @@
 				"nytely.case.change.settings": {
 					"type": "object",
 					"default": {
-						"variableCase": true,
-						"constantCase": true
+						"Snake_Case": true,
+						"Pascal_Snake_Case": true,
+						"Camel_Case": true,
+						"Kebab_Case": true,
+						"Screaming_Case": true,
+						"Flat_Case": true,
+						"Constant_Case": true,
+						"Pascal_Case": true,
+						"Auto_Case_Change_Map": {
+							"Variable": "Snake_Case",
+							"Constant": "Pascal_Snake_Case",
+							"Function": "Pascal_Snake_Case",
+							"Class": "Pascal_Snake_Case"
+						}
 					},
 					"description": "Specifies the case which you want to use."
 				}

@@ -4,7 +4,10 @@
 import * as vscode from "vscode";
 
 //Custom Imports
-import * as Nytely_Text_Formatter from "../Helpers/NytelyText_Formatter";
+import { Helpers } from "../Helpers/Helpers";
+import * as Interfaces from "../Helpers/Interfaces";
+import * as Case_Styler from "../Helpers/Case_Stylers";
+import * as Text_Formatter from "../Helpers/Text_Formatter";
 
 //Setup Class
 export default class AutoFormatter {
@@ -52,31 +55,18 @@ export default class AutoFormatter {
 //Setup the Symbol Editor Generator
 async function Generate_Symbol_Editor(
 	document: vscode.TextDocument,
-	symbol: vscode.DocumentSymbol
+	Symbol: Interfaces.Symbol_Interface
 ): Promise<vscode.WorkspaceEdit> {
 	//
-	//Setup the Symbol Kind List
-	const Symbol_Kind_List = new Map(Object.entries(vscode.SymbolKind));
-
-	//Setup the Kind String for the Given Symbol
-	const Symbol_Kind_String = String(Symbol_Kind_List.get(String(symbol.kind))).toLowerCase();
-
 	//Setup the Formatted String
-	let formatted_string = String(symbol.name);
-
-	//Format the String to the Nytely Standard
-	if (Symbol_Kind_String === "variable")
-		formatted_string = Nytely_Text_Formatter.toVariableCase(formatted_string);
-
-	if (Symbol_Kind_String === "constant")
-		formatted_string = Nytely_Text_Formatter.toConstantCase(formatted_string);
-
+	const Formatted_String = Text_Formatter.Format_Text(Symbol.Summary.Name, Symbol.Summary.Kind);
+	console.log(Formatted_String);
 	//Setup the Workspace Editor
 	const Rename_Constants_Editor: vscode.WorkspaceEdit = await vscode.commands.executeCommand(
 		"vscode.executeDocumentRenameProvider",
 		document.uri,
-		symbol.range.start,
-		formatted_string
+		Symbol.Summary.Position,
+		Formatted_String
 	);
 
 	//Return the Workspace Editor
@@ -84,7 +74,7 @@ async function Generate_Symbol_Editor(
 }
 
 //Setup the Symbol Finder
-async function Find_Symbols(document: vscode.TextDocument): Promise<vscode.DocumentSymbol[]> {
+async function Find_Symbols(document: vscode.TextDocument): Promise<Interfaces.Symbol_Interface[]> {
 	//
 	//Get the Symbol List
 	const Symbol_List: vscode.DocumentSymbol[] = await vscode.commands.executeCommand(
@@ -95,8 +85,46 @@ async function Find_Symbols(document: vscode.TextDocument): Promise<vscode.Docum
 	//Get the Filtered Symbols
 	const Filtered_Symbols = Filter_Symbols(Symbol_List);
 
+	//Setup the Symbol Kind List
+	const Symbol_Kind_List = new Map(Object.entries(vscode.SymbolKind));
+
+	//Setup the New Symbol List
+	const New_Symbol_List = new Array();
+
+	//Build the New Symbol
+	for (const Symbol of Filtered_Symbols) {
+		//
+		//Get the Line where the Symbol is defined
+		const Symbol_Line = document.lineAt(Symbol.range.start.line).text;
+
+		//Split the Symbol Line into it's Different Components
+		const Symbol_Line_Array = Symbol_Line.split(" ");
+
+		//Get the Symbol's Definition
+		const Symbol_Definition =
+			Get_Definition_From_String_Array(Symbol_Line_Array) ||
+			Symbol_Kind_List.get(String(Symbol.kind));
+
+		//Setup the Symbol's Position
+		var symbol_position = Symbol.selectionRange.start;
+
+		//Build the New Symbol
+		const New_Symbol: Interfaces.Symbol_Interface = {
+			Raw: Symbol,
+			Summary: {
+				Name: Symbol.name,
+				Kind: Symbol_Definition,
+				Uri: document.uri,
+				Position: symbol_position,
+			},
+		};
+
+		//Push the Symbol to the New Symbol List
+		New_Symbol_List.push(New_Symbol);
+	}
+
 	//Setup the Constant Variables
-	return Filtered_Symbols;
+	return New_Symbol_List;
 }
 
 //Setup the Symbol Fiilterer
@@ -116,4 +144,32 @@ function Filter_Symbols(Symbols: vscode.DocumentSymbol[]): vscode.DocumentSymbol
 
 	//Return the Filtered Symbols
 	return Filtered_Symbols;
+}
+
+function Get_Definition_From_String_Array(String_Array: string[]) {
+	//
+	//Setup the Requested Definition
+	var requested_definition;
+
+	//Loop through the String Array
+	for (const Given_String of String_Array) {
+		//
+		//Filter the Given String
+		const Filtered_String = Given_String.replaceAll(/\s|[^\w\s]/g, "").toLowerCase();
+
+		//Get the Definition from the Filtered String
+		const Definition = Helpers.Definition_Map.get(Filtered_String);
+
+		//Check if No definition was found
+		if (!Definition) continue;
+
+		//Set the Requested Definition
+		requested_definition = Definition;
+
+		//Break the Loop
+		break;
+	}
+
+	//Return the Requested Definition
+	return requested_definition;
 }

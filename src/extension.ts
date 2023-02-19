@@ -4,11 +4,11 @@
 import * as vscode from "vscode";
 
 //Classes
-import ChangeCase from "./Classes/ChangeCase_Class";
-import AutoFormatter from "./Classes/AutoFormatter_Class";
+import Change_Case from "./Classes/Change_Case_Class";
+import Auto_Formatter from "./Classes/Auto_Formatter_Class";
 
 //Start the Auto Formatter
-new AutoFormatter();
+new Auto_Formatter();
 
 //Exports
 export function activate(context: vscode.ExtensionContext) {
@@ -36,11 +36,11 @@ export function activate(context: vscode.ExtensionContext) {
 			],
 
 			//Add the ChangeCase Subscription
-			new ChangeCase(),
+			new Change_Case(),
 			{
 				//
 				//Provide the Code Actions
-				providedCodeActionKinds: ChangeCase.providedCodeActionKinds,
+				providedCodeActionKinds: Change_Case.providedCodeActionKinds,
 			}
 		)
 	);
