@@ -6,22 +6,22 @@ With Nytely Case Changer Developers can set and forget, Each Definition Type (co
 
 ## **How to Use it**
 
-\
 **1. Setup your Desired Cases for Each Definition in the extensions settings page**\
-\
+ \
 ![Screenshot 2023-02-20 013520](https://user-images.githubusercontent.com/48361205/219982270-1b7e3ac3-9669-4484-9c1d-87d7b28ba0f4.png)
-
+ \
 > **NOTE**: Make sure to also Check the **"Change Cases on Save"** Option
 
 **2. Now Just Save and all the Variables, and their references, will automatically be changed**\
- \
-Before:
-![Screenshot 2023-02-20 013424](https://user-images.githubusercontent.com/48361205/219982253-8f505611-7e63-4a0e-9ae9-e1c7fabd7329.png)
 
+Before:
+ \
+![Screenshot 2023-02-20 013424](https://user-images.githubusercontent.com/48361205/219982253-8f505611-7e63-4a0e-9ae9-e1c7fabd7329.png)
+ \
 After:
  \
 ![Screenshot 2023-02-20 013458](https://user-images.githubusercontent.com/48361205/219982256-bf26f0ba-382e-4a58-b3b0-b6ba4f6665d5.png)
-
+ \
 > Language Supported: javascript, typescript, javascriptreact, typescriptreact, html
 
 ## Release Notes
