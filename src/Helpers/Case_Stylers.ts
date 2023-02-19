@@ -146,10 +146,17 @@ function Get_Formatted_Text_Array(Text: string) {
 	//
 	//Format the Given Text
 	const Formatted_Text = Text.replace(/\_|\-/g, " ") // Replaces "_" and "-" With A White Space
-		.replace(/([A-Z])/g, " $1") // Adds a trailing White Space to all Capital Letters
 		.replace(/\s+/g, " ") // Removes Extra White Spaces (EG: "Test  Case" becomes "Test Case")
 		.trim() // Removes Trailing and Leading White Spaces from the entire Text
 		.toLowerCase(); // Converts the Entire Text to Lower Case
+
+	/*
+		BUG: The Statement Below is used to split words apart based on Capitilization
+			 However, when the entire word is capitilized then all of it's letters
+			 are split into their own word <== This should to happen
+
+			 .replace(/([A-Z])/g, " $1") // Adds a trailing White Space to all Capital Letters
+	*/
 
 	//Convert the Formatted Text to an Array
 	const Formatted_Text_Array = Formatted_Text.split(" ");

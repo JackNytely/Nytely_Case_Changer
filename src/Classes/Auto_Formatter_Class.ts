@@ -22,14 +22,14 @@ export default class AutoFormatter {
 	//Setup the Private Methods
 	private async Format_Document(document: vscode.TextDocument) {
 		//
+		//Check if the Current Document Language is Supported
+		if (!Helpers.Supported_Languages.includes(document.languageId)) return;
+
 		//Get the Configuration
 		const Case_Configuration = vscode.workspace.getConfiguration("Nytely Case Changer");
 
 		//Check if Auto Change Case on Save is not Enabled
 		if (!Case_Configuration.get("Change Cases on Save")) return;
-
-		//Check if the Current Document is Supported
-		if (document.languageId !== "javascript") return;
 
 		//Setup the Symbol Editor
 		const Symbol_Editor = new vscode.WorkspaceEdit();
