@@ -22,6 +22,12 @@ export default class AutoFormatter {
 	//Setup the Private Methods
 	private async Format_Document(document: vscode.TextDocument) {
 		//
+		//Get the Configuration
+		const Case_Configuration = vscode.workspace.getConfiguration("nytely.case.change.settings");
+
+		//Check if Auto Change Case on Save is not Enabled
+		if (!Case_Configuration.get("Auto_Change_Case_On_Save")) return;
+
 		//Check if the Current Document is Supported
 		if (document.languageId !== "javascript") return;
 
@@ -44,11 +50,11 @@ export default class AutoFormatter {
 			Edit_List.push(...Generated_Editor.get(document.uri));
 		}
 
-		//console.log(Edit_List);
+		//Add the edits to the Symbol Editor
 		Symbol_Editor.set(document.uri, Edit_List);
 
 		//Apply the Edits
-		//vscode.workspace.applyEdit(Symbol_Editor);
+		vscode.workspace.applyEdit(Symbol_Editor);
 	}
 }
 
@@ -60,7 +66,7 @@ async function Generate_Symbol_Editor(
 	//
 	//Setup the Formatted String
 	const Formatted_String = Text_Formatter.Format_Text(Symbol.Summary.Name, Symbol.Summary.Kind);
-	console.log(Formatted_String);
+
 	//Setup the Workspace Editor
 	const Rename_Constants_Editor: vscode.WorkspaceEdit = await vscode.commands.executeCommand(
 		"vscode.executeDocumentRenameProvider",

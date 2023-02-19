@@ -78,6 +78,7 @@
 						"Flat_Case": true,
 						"Constant_Case": true,
 						"Pascal_Case": true,
+						"Auto_Change_Case_On_Save": false,
 						"Auto_Case_Change_Map": {
 							"Variable": "Snake_Case",
 							"Constant": "Pascal_Snake_Case",
