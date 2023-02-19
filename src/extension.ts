@@ -12,8 +12,7 @@ new Auto_Formatter();
 
 //Exports
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "nytely-case-changer" is now active!');
-
+	//
 	//context.subscriptions.push(disposable);
 	context.subscriptions.push(
 		//

@@ -23,10 +23,10 @@ export default class AutoFormatter {
 	private async Format_Document(document: vscode.TextDocument) {
 		//
 		//Get the Configuration
-		const Case_Configuration = vscode.workspace.getConfiguration("nytely.case.change.settings");
+		const Case_Configuration = vscode.workspace.getConfiguration("Nytely Case Changer");
 
 		//Check if Auto Change Case on Save is not Enabled
-		if (!Case_Configuration.get("Auto_Change_Case_On_Save")) return;
+		if (!Case_Configuration.get("Change Cases on Save")) return;
 
 		//Check if the Current Document is Supported
 		if (document.languageId !== "javascript") return;

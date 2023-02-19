@@ -36,9 +36,6 @@ export default class ChangeCase implements vscode.CodeActionProvider {
 		//Build  the Actions
 		for (const Case of Case_Styler.Cases) {
 			//
-			//Check if the Case Is Disabled by the User
-			if (!vscode.workspace.getConfiguration("nytely.case.change.settings")[Case]) return;
-
 			//Push the Fix for the Specific Setting to the Enabled Cases List
 			Enabled_Cases.push(this.createFix(document, range, Case, Text));
 		}

@@ -65,28 +65,113 @@
 	},
 	"contributes": {
 		"configuration": {
+			"type": "object",
 			"title": "Nytely Case Changer",
 			"properties": {
-				"nytely.case.change.settings": {
-					"type": "object",
-					"default": {
-						"Snake_Case": true,
-						"Pascal_Snake_Case": true,
-						"Camel_Case": true,
-						"Kebab_Case": true,
-						"Screaming_Case": true,
-						"Flat_Case": true,
-						"Constant_Case": true,
-						"Pascal_Case": true,
-						"Auto_Change_Case_On_Save": false,
-						"Auto_Case_Change_Map": {
-							"Variable": "Snake_Case",
-							"Constant": "Pascal_Snake_Case",
-							"Function": "Pascal_Snake_Case",
-							"Class": "Pascal_Snake_Case"
-						}
-					},
-					"description": "Specifies the case which you want to use."
+				"Nytely Case Changer.Change Cases on Save": {
+					"type": "boolean",
+					"description": "Choose whether your cases will automatically change on save",
+					"default": false
+				},
+				"Nytely Case Changer.Variable Case": {
+					"type": "string",
+					"description": "Choose the case you want Variables to be automatically changed to",
+					"default": "Snake_Case",
+					"enum": [
+						"Snake_Case",
+						"Pascal_Snake_Case",
+						"Camel_Case",
+						"Kebab_Case",
+						"Screaming_Case",
+						"Flat_Case",
+						"Constant_Case",
+						"Pascal_Case"
+					],
+					"enumDescriptions": [
+						"Old_variable-CaSe => new_variable_case",
+						"Old_variable-CaSe => New_Variable_Case",
+						"Old_variable-CaSe => newVariableCase",
+						"Old_variable-CaSe => new-variable-case",
+						"Old_variable-CaSe => NEWVARIABLECASE",
+						"Old_variable-CaSe => newvariablecase",
+						"Old_variable-CaSe => NEW_VARIABLE_CASE",
+						"Old_variable-CaSe => NewVariableCase"
+					]
+				},
+				"Nytely Case Changer.Constant Case": {
+					"type": "string",
+					"description": "Choose the case you want Constants to be automatically changed to",
+					"default": "Pascal_Snake_Case",
+					"enum": [
+						"Snake_Case",
+						"Pascal_Snake_Case",
+						"Camel_Case",
+						"Kebab_Case",
+						"Screaming_Case",
+						"Flat_Case",
+						"Constant_Case",
+						"Pascal_Case"
+					],
+					"enumDescriptions": [
+						"Old_variable-CaSe => new_variable_case",
+						"Old_variable-CaSe => New_Variable_Case",
+						"Old_variable-CaSe => newVariableCase",
+						"Old_variable-CaSe => new-variable-case",
+						"Old_variable-CaSe => NEWVARIABLECASE",
+						"Old_variable-CaSe => newvariablecase",
+						"Old_variable-CaSe => NEW_VARIABLE_CASE",
+						"Old_variable-CaSe => NewVariableCase"
+					]
+				},
+				"Nytely Case Changer.Function Case": {
+					"type": "string",
+					"description": "Choose the case you want Functions to be automatically changed to",
+					"default": "Pascal_Snake_Case",
+					"enum": [
+						"Snake_Case",
+						"Pascal_Snake_Case",
+						"Camel_Case",
+						"Kebab_Case",
+						"Screaming_Case",
+						"Flat_Case",
+						"Constant_Case",
+						"Pascal_Case"
+					],
+					"enumDescriptions": [
+						"Old_variable-CaSe => new_variable_case",
+						"Old_variable-CaSe => New_Variable_Case",
+						"Old_variable-CaSe => newVariableCase",
+						"Old_variable-CaSe => new-variable-case",
+						"Old_variable-CaSe => NEWVARIABLECASE",
+						"Old_variable-CaSe => newvariablecase",
+						"Old_variable-CaSe => NEW_VARIABLE_CASE",
+						"Old_variable-CaSe => NewVariableCase"
+					]
+				},
+				"Nytely Case Changer.Class Case": {
+					"type": "string",
+					"description": "Choose the case you want Classes to be automatically changed to",
+					"default": "Pascal_Snake_Case",
+					"enum": [
+						"Snake_Case",
+						"Pascal_Snake_Case",
+						"Camel_Case",
+						"Kebab_Case",
+						"Screaming_Case",
+						"Flat_Case",
+						"Constant_Case",
+						"Pascal_Case"
+					],
+					"enumDescriptions": [
+						"Old_variable-CaSe => new_variable_case",
+						"Old_variable-CaSe => New_Variable_Case",
+						"Old_variable-CaSe => newVariableCase",
+						"Old_variable-CaSe => new-variable-case",
+						"Old_variable-CaSe => NEWVARIABLECASE",
+						"Old_variable-CaSe => newvariablecase",
+						"Old_variable-CaSe => NEW_VARIABLE_CASE",
+						"Old_variable-CaSe => NewVariableCase"
+					]
 				}
 			}
 		}

@@ -32,8 +32,11 @@ function To_Pascal_Case(Text: string): string {
 	//Format the Text to a Workable Array
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
+	//Modify the Formatted Text Array
+	const Modified_Text_Array = Capitilize_First_Letter_Of_Word(Formatted_Text_Array);
+
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Modified_Text_Array.join("");
 
 	//Return the Final Text
 	return Final_Text;
@@ -46,7 +49,7 @@ function To_Constant_Case(Text: string): string {
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Formatted_Text_Array.join("_").toUpperCase();
 
 	//Return the Final Text
 	return Final_Text;
@@ -59,7 +62,7 @@ function To_Flat_Case(Text: string): string {
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Formatted_Text_Array.join("");
 
 	//Return the Final Text
 	return Final_Text;
@@ -72,7 +75,7 @@ function To_Screaming_Case(Text: string): string {
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Formatted_Text_Array.join("").toUpperCase();
 
 	//Return the Final Text
 	return Final_Text;
@@ -85,7 +88,7 @@ function To_Kebab_Case(Text: string): string {
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Formatted_Text_Array.join("-");
 
 	//Return the Final Text
 	return Final_Text;
@@ -97,8 +100,14 @@ function To_Camel_Case(Text: string): string {
 	//Format the Text to a Workable Array
 	const Formatted_Text_Array = Get_Formatted_Text_Array(Text);
 
+	//Modify the Formatted Text Array
+	const Modified_Text_Array = Capitilize_First_Letter_Of_Word(Formatted_Text_Array);
+
+	//Change the first word to Lower Case
+	Modified_Text_Array[0] = Modified_Text_Array[0].toLowerCase();
+
 	//Build the Final Text
-	const Final_Text = "";
+	const Final_Text = Modified_Text_Array.join("");
 
 	//Return the Final Text
 	return Final_Text;
