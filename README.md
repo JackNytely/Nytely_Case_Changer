@@ -26,15 +26,19 @@ After:
 
 ## Release Notes
 
-### 0.1.1
-
-\+ Implemented Auto Case Changing on Save
+### 1.0.2
 
 \+ Implemented a New Settings System (V2)
 
 \- Removed the Old Settings System (V1)
 
-### 0.1.0
+
+### 1.0.1
+
+\+ Implemented Auto Case Changing on Save
+
+
+### 1.0.0
 \+ Implemented a New Settings System (V1)
 
 \+ Added Manual Case Changing Ability through Tooltips
