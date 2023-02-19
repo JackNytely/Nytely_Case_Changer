@@ -4,6 +4,8 @@ Nytely Case Changer was made in order to help prevent developers from getting st
 
 With Nytely Case Changer Developers can set and forget, Each Definition Type (const, let / var, class, function...etc) will now have their variables set to the case of the Developer's choice automatically when the document is saved, this gives Developers a High Level of Customization and a more Organized Code Strcutre
 
+![Logo](https://user-images.githubusercontent.com/48361205/219980157-8cfbab88-f70e-4d5d-8908-edb51d8c2676.png)
+
 ## **How to Use it**
 
 \
