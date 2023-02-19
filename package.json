@@ -2,8 +2,8 @@
 	"name": "nytely-case-changer",
 	"displayName": "Nytely Case Changer",
 	"publisher": "JackNytely",
-	"description": "Changes the Case of the Selected Text to the Nytely Standard Constant_Case or variable_case",
-	"version": "1.0.0",
+	"description": "Changes the Case of the Selected Text to your preferred presets",
+	"version": "1.0.1",
 	"icon": "static/icon.png",
 	"author": {
 		"name": "JackNytely"
