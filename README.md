@@ -1,51 +1,45 @@
-# Change Case
+![Github Logo](https://user-images.githubusercontent.com/48361205/219980676-c86e75d0-b44a-4ef2-ba2f-fd39202b3ba3.png)
 
-This extension allows you to convert the selected text into a Nytely Standardized Case. Supported Cases are:
+Nytely Case Changer was made in order to help prevent developers from getting stuck while coding becuase they are not sure which case to use for their current project or if the other developers on their team will use the same case they do.
 
-```css
-1. Variable Case - (variable_case)
-2. Constant Case - (Constant_Case)
-```
+With Nytely Case Changer Developers can set and forget, Each Definition Type (const, let / var, class, function...etc) will now have their variables set to the case of the Developer's choice automatically when the document is saved, this gives Developers a High Level of Customization and a more Organized Code Strcutre
 
 ## **How to Use it**
 
-\
-**1. Select any text from the file, You will see an icon on the left side for options**\
-\
-![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217572148-47306801-17ad-4de4-8eba-9e85ce436c7b.png)
-
-> **NOTE**: If you want to change all the occurance of the selected Text, use **Ctrl+Shift+L** or **Cmd+Shift+L**(on Mac) after selection
-
-**2. Click on the icon, it will give the options on change the case and select any option from the dropdown**\
+**1. Setup your Desired Cases for Each Definition in the extensions settings page**\
  \
-![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217572620-81ad0d37-36fd-4aa2-8854-f1a508981567.png)
-
-**3. The selected text case will get changed**\
+![Screenshot 2023-02-20 013520](https://user-images.githubusercontent.com/48361205/219982270-1b7e3ac3-9669-4484-9c1d-87d7b28ba0f4.png)
  \
- ![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217573671-eaaa55fa-906a-4ff1-8244-d05751197cb5.png)
+> **NOTE**: Make sure to also Check the **"Change Cases on Save"** Option
 
-> Language Supported: javascript, typescript, javascriptreact, typescriptreact, html, css, less, scss, sass, python, json, markdown, go
+**2. Now Just Save and all the Variables, and their references, will automatically be changed**\
 
-## **Customizing the Nytely Case Changer Options**
-
-You can add only a subset of all supported Nytely Case Changer options as per your preference and usage, to keep the Case Change list short and more handy.
-
-You need to change the default json (**settings.json**) in your VS Code settings (**Ctrl + ,**).
-\
-![Screenshot 2023-02-08 171921](https://user-images.githubusercontent.com/48361205/217574146-89ab9799-9234-4b5f-a90d-fbbf0606e939.png)
-
-```json
-Following is the default JSON that supports all casing, Change the value to false for the case you don't want to use.
-{
-  "variableCase": true,
-  "constantCase": true
-}
-```
+Before:
+ \
+![Screenshot 2023-02-20 013424](https://user-images.githubusercontent.com/48361205/219982253-8f505611-7e63-4a0e-9ae9-e1c7fabd7329.png)
+ \
+After:
+ \
+![Screenshot 2023-02-20 013458](https://user-images.githubusercontent.com/48361205/219982256-bf26f0ba-382e-4a58-b3b0-b6ba4f6665d5.png)
+ \
+> Language Supported: javascript, typescript, javascriptreact, typescriptreact, html
 
 ## Release Notes
 
-### 0.1.0
+### 0.1.1
 
-Initial release of Nytely Case Changer
+\+ Implemented Auto Case Changing on Save
+
+\+ Implemented a New Settings System (V2)
+
+\- Removed the Old Settings System (V1)
+
+### 0.1.0
+\+ Implemented a New Settings System (V1)
+
+\+ Added Manual Case Changing Ability through Tooltips
+
+\~ Initial release of Nytely Case Changer
+
 
 **Enjoy!**
