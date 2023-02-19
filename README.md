@@ -26,11 +26,18 @@ After:
 
 ## Release Notes
 
+### 1.0.3
+
+\~ Fixed Bugs ^_^
+
+
 ### 1.0.2
 
 \+ Implemented a New Settings System (V2)
 
 \- Removed the Old Settings System (V1)
+
+\~ Fixed Bugs ^_^
 
 
 ### 1.0.1
