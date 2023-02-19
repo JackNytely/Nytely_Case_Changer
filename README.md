@@ -11,7 +11,7 @@ With Nytely Case Changer Developers can set and forget, Each Definition Type (co
 \
 ![Screenshot 2023-02-20 013520](https://user-images.githubusercontent.com/48361205/219982270-1b7e3ac3-9669-4484-9c1d-87d7b28ba0f4.png)
 
-> **NOTE**: Make sure to also Check the **"Change Cases ib Save"** Option
+> **NOTE**: Make sure to also Check the **"Change Cases on Save"** Option
 
 **2. Now Just Save and all the Variables, and their references, will automatically be changed**\
  \
