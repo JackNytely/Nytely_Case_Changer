@@ -1,11 +1,8 @@
 # Change Case
 
-This extension allows you to convert the selected text into a Nytely Standardized Case. Supported Cases are:
+Nytely Case Changer was made in order to help prevent developers from getting stuck while coding becuase they are not sure which case to use for their current project or if the other developers on their team will use the same case they do.
 
-```css
-1. Variable Case - (variable_case)
-2. Constant Case - (Constant_Case)
-```
+With Nytely Case Changer Developers can set and forget, Each Definition Type (const, let / var, class, function...etc) will now have their variables set to the case of the Developer's choice automatically when the document is saved, this gives Developers a High Level of Customization and a more Organized Code Strcutre
 
 ## **How to Use it**
 
