@@ -28,14 +28,18 @@ After:
 
 ### 0.1.1
 
-+ Implemented Auto Case Changing on Save
-+ Implemented a New Settings System (V2)
-- Removed the Old Settings System (V1)
+\+ Implemented Auto Case Changing on Save
+
+\+ Implemented a New Settings System (V2)
+
+\- Removed the Old Settings System (V1)
 
 ### 0.1.0
-+ Implemented a New Settings System (V1)
-+ Added Manual Case Changing Ability through Tooltips
+\+ Implemented a New Settings System (V1)
 
-Initial release of Nytely Case Changer
+\+ Added Manual Case Changing Ability through Tooltips
+
+\~ Initial release of Nytely Case Changer
+
 
 **Enjoy!**
