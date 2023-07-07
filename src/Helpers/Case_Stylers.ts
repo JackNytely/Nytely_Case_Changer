@@ -144,22 +144,22 @@ function To_Snake_Case(Text: string): string {
 
 function Get_Formatted_Text_Array(Text: string) {
 	//
+	//Check if the String Only contains Upper Case Letters
+	const Upper_Case_Only = Text.toUpperCase() === Text;
+
 	//Format the Given Text
-	const Formatted_Text = Text.replace(/\_|\-/g, " ") // Replaces "_" and "-" With A White Space
+	let formatted_text = Text.replace(/\_|\-/g, " ") // Replaces "_" and "-" With A White Space
 		.replace(/\s+/g, " ") // Removes Extra White Spaces (EG: "Test  Case" becomes "Test Case")
-		.trim() // Removes Trailing and Leading White Spaces from the entire Text
-		.toLowerCase(); // Converts the Entire Text to Lower Case
+		.trim(); // Removes Trailing and Leading White Spaces from the entire Text
 
-	/*
-		BUG: The Statement Below is used to split words apart based on Capitilization
-			 However, when the entire word is capitilized then all of it's letters
-			 are split into their own word <== This should to happen
+	//Add a trailing White Space to the Formatted Text if it does not consist of only Upper Case Letters
+	if (!Upper_Case_Only) formatted_text = formatted_text.replace(/([A-Z])/g, " $1");
 
-			 .replace(/([A-Z])/g, " $1") // Adds a trailing White Space to all Capital Letters
-	*/
+	//Convert the Text to Lower Case
+	formatted_text = formatted_text.toLowerCase();
 
 	//Convert the Formatted Text to an Array
-	const Formatted_Text_Array = Formatted_Text.split(" ");
+	const Formatted_Text_Array = formatted_text.split(" ");
 
 	//Return the Formatted Text Array
 	return Formatted_Text_Array;
@@ -168,5 +168,5 @@ function Get_Formatted_Text_Array(Text: string) {
 function Capitilize_First_Letter_Of_Word(Text_Array: Array<string>) {
 	//
 	// Capitalize the first letter of every word in the Array and Return the new Array
-	return Text_Array.map((Word) => Word.at(0)?.toUpperCase() + Word.slice(1));
+	return Text_Array.map(Word => Word.at(0)?.toUpperCase() + Word.slice(1));
 }
