@@ -147,16 +147,17 @@ function Get_Formatted_Text_Array(Text: string) {
 	//Check if the String Only contains Upper Case Letters
 	const Upper_Case_Only = Text.toUpperCase() === Text;
 
-	//Format the Given Text
-	let formatted_text = Text.replace(/\_|\-/g, " ") // Replaces "_" and "-" With A White Space
-		.replace(/\s+/g, " ") // Removes Extra White Spaces (EG: "Test  Case" becomes "Test Case")
-		.trim(); // Removes Trailing and Leading White Spaces from the entire Text
+	//Replaces "_" and "-" With A White Space
+	let formatted_text = Text.replace(/\_|\-/g, " ");
 
 	//Add a trailing White Space to the Formatted Text if it does not consist of only Upper Case Letters
 	if (!Upper_Case_Only) formatted_text = formatted_text.replace(/([A-Z])/g, " $1");
 
-	//Convert the Text to Lower Case
-	formatted_text = formatted_text.toLowerCase();
+	//Format the Text
+	formatted_text = formatted_text
+		.replace(/\s+/g, " ") // Removes Extra White Spaces (EG: "Test  Case" becomes "Test Case")
+		.trim() // Removes Trailing and Leading White Spaces from the entire Text;
+		.toLowerCase(); // Converts the Text to Lower Case
 
 	//Convert the Formatted Text to an Array
 	const Formatted_Text_Array = formatted_text.split(" ");
